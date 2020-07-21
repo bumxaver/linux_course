@@ -1,0 +1,14 @@
+[Unit]
+Description=simple_service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/simple/simple-service
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
